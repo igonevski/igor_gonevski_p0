@@ -1,0 +1,29 @@
+create table xyz_user(
+xyz_user_id serial primary key,
+xyz_user_login varchar(30) not null,
+xyz_user_password varchar(50) not null
+);
+
+create table xyz_checking_accounts(
+xyz_checking_id serial primary key,
+xyz_owner_id int not null,
+xyz_checking_account_name varchar(50) not null,
+xyz_checking_account_balance double precision not null
+);
+
+create table xyz_savings_accounts(
+xyz_savings_id serial primary key,
+xyz_owner_id int not null,
+xyz_savings_account_name varchar(50) not null,
+xyz_savings_account_balance double precision  not null
+);
+
+create table xyz_transactions(
+xyz_transaction_id serial primary key,
+xyz_owner_id int not null,
+xyz_transaction_type varchar(20) not null,
+xyz_transaction_source_account varchar(50) not null,
+xyz_transaction_destination_account varchar(50) not null,
+xyz_transaction_amount double precision not null,
+xyz_transaction_timestamp float not null
+);
